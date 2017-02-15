@@ -18,14 +18,18 @@ The container exposed 8085 and 8087 ports for config and connection.
 
 ### Remote access
 Modify XX-Net/data/launcher/config.yaml
-  `modules:{`
-  ` launcher:{ allow_remote_connect:1 }`
+```shell
+modules:{
+  launcher:{ allow_remote_connect:1 }
+```
 
 ### GAE_proxy service for remote hosts
 Add XX-Net/data/gae_proxy/manual.ini
 
-`[listen]`
-`ip = 0.0.0.0`
+```shell
+[listen]
+ip = 0.0.0.0
+```
 
 Now we can access control page for the container with `http://127.0.0.1:8085`
 
