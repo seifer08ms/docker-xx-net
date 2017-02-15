@@ -1,0 +1,7 @@
+#!/bin/bash
+docker stop xx-net
+docker rm xx-net
+docker build -t seifer08ms/xx-net .
+docker run --name=xx-net --restart=always -d -v $PWD/data:/opt/XX-Net/data -v $PWD/code:/opt/XX-Net/code -p 8085:8085 -p 8087:8087 seifer08ms/xx-net 
+
+
