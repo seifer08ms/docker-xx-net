@@ -4,14 +4,14 @@
 
 
 # Base image to use, this must be set as the first line
-FROM ubuntu
+FROM ubuntu:latest
 
 # Maintainer: docker_user <docker_user at email.com> (@docker_user)
 MAINTAINER hi181904665@gmail.com
 
 # Add XX-Net
-RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
-RUN apt-get update && apt-get install --no-install-recommends -y \
+RUN sed -i 's/archive.ubuntu.com/mirrors.163.com/g' /etc/apt/sources.list
+RUN rm -rf /var/lib/apt/lists/* && apt-get update --fix-missing && apt-get update   && apt-get install --no-install-recommends -y \
 python \
 python-openssl \
 libffi-dev \
